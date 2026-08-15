@@ -1,0 +1,48 @@
+@import "tailwindcss";
+@import "remixicon/fonts/remixicon.css";
+
+@import "@fontsource/inclusive-sans/400.css";
+@import "@fontsource/inclusive-sans/600.css";
+@import "@fontsource/archivo/600.css";
+@import "@fontsource/archivo/700.css";
+
+@import "./tokens.css";
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background-primary text-content-primary font-body antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-heading;
+  }
+}
+
+@layer utilities {
+  .container-page {
+    @apply mx-auto w-full max-w-[1280px] px-5 md:px-10 lg:px-20;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

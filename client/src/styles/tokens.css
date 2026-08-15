@@ -1,0 +1,55 @@
+:root {
+  --brand-blue: #0064ff;
+  --brand-orange: #ff7300;
+  --brand-yellow: #f5a000;
+
+  --content-primary: #020617;
+  --content-secondary: #334155;
+  --content-tertiary: #64748b;
+  --content-brand-eb: #0064ff;
+  --content-on-brand: #ffffff;
+  --content-tertiary-inverse: #94a3b8;
+
+  --background-primary: #ffffff;
+  --background-disabled: #f8fafc;
+  --background-brand-eb: #0064ff;
+  --background-muted: #f8fafc;
+
+  --border-default: #cbd5e1;
+
+  --spacing-s: 8px;
+  --spacing-m: 12px;
+  --spacing-l: 16px;
+  --spacing-2xl: 32px;
+
+  --radius-xs: 4px;
+  --radius-s: 8px;
+  --radius-m: 12px;
+  --radius-pill: 999px;
+
+  --font-body: "Inclusive Sans", system-ui, sans-serif;
+  --font-heading: "Archivo", system-ui, sans-serif;
+}
+
+@theme inline {
+  --color-brand-blue: var(--brand-blue);
+  --color-brand-orange: var(--brand-orange);
+  --color-brand-yellow: var(--brand-yellow);
+  --color-content-primary: var(--content-primary);
+  --color-content-secondary: var(--content-secondary);
+  --color-content-tertiary: var(--content-tertiary);
+  --color-content-brand-eb: var(--content-brand-eb);
+  --color-content-on-brand: var(--content-on-brand);
+  --color-content-tertiary-inverse: var(--content-tertiary-inverse);
+  --color-background-primary: var(--background-primary);
+  --color-background-disabled: var(--background-disabled);
+  --color-background-brand-eb: var(--background-brand-eb);
+  --color-background-muted: var(--background-muted);
+  --color-border-default: var(--border-default);
+  --font-body: var(--font-body);
+  --font-heading: var(--font-heading);
+  --radius-xs: var(--radius-xs);
+  --radius-s: var(--radius-s);
+  --radius-m: var(--radius-m);
+  --radius-pill: var(--radius-pill);
+}
