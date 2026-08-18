@@ -1,41 +1,35 @@
-import { assets } from './assets';
-
-export const impactStats = [
+export const impactHighlights = [
   {
-    value: '—',
-    label: 'Participants Reached — Individuals who have taken part in EchoBloom programs and creative experiences.',
+    title: 'Real projects',
+    description: "Contribute to work that supports EchoBloom's programs and mission.",
   },
   {
-    value: '—',
-    label: 'Creative Sessions — Art and technology sessions designed around different ways of participating.',
+    title: 'Cross-disciplinary teams',
+    description:
+      'Work alongside designers, researchers, technologists, program teams, and community partners.',
   },
   {
-    value: '—',
-    label: 'Artworks Created — Original expressions created by participants and explored through new creative tools.',
-  },
-  {
-    value: '—',
-    label: 'Partner Organizations — Schools, community organizations and collaborators working alongside EchoBloom.',
+    title: 'Meaningful impact',
+    description:
+      'Use your skills to explore how technology can better serve people it has historically overlooked.',
   },
 ];
 
-export const impactFeatures = [
-  {
-    image: assets.homeFeature,
-    title: 'Programs assisting neurodivergent communities',
-    description:
-      'EchoBloom explores how AI can support dignity, inclusion, and human connection.',
-  },
-  {
-    image: assets.homeFeature,
-    title: 'Powered by IPMD',
-    description:
-      'Our programs use technology developed with IPMD to support creativity, expression, and communication.',
-  },
-  {
-    image: assets.homeFeature,
-    title: 'Built with the next generation',
-    description:
-      'Interns contribute across design, research, technology, outreach, and community programs.',
-  },
+export const academicStatusOptions = [
+  { value: 'freshman', label: 'Freshman' },
+  { value: 'sophomore', label: 'Sophomore' },
+  { value: 'junior', label: 'Junior' },
+  { value: 'senior', label: 'Senior' },
+  { value: 'graduate', label: 'Graduate Student' },
+  { value: 'recent-grad', label: 'Recent Graduate' },
+  { value: 'other', label: 'Other' },
+];
+
+export const programPositionOptions = [
+  { value: 'product-design', label: 'Product Design Intern' },
+  { value: 'research', label: 'Research Intern' },
+  { value: 'engineering', label: 'Engineering Intern' },
+  { value: 'community-programs', label: 'Community Programs Intern' },
+  { value: 'outreach', label: 'Outreach Intern' },
+  { value: 'content', label: 'Content Intern' },
 ];

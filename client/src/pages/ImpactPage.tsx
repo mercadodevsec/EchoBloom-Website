@@ -1,90 +1,104 @@
 import { Link } from 'react-router-dom';
-import { impactFeatures, impactStats } from '../data/impact';
 import { assets } from '../data/assets';
+import { impactHighlights } from '../data/impact';
+import { interns } from '../data/interns';
+import { ImpactApplicationForm } from '../components/forms/ImpactApplicationForm';
+import { Carousel, PageHeroBanner } from '../components/sections/Carousel';
 import { HeroSection } from '../components/sections/HeroSection';
-import { SplitSection } from '../components/sections/SplitSection';
-import { StatsRow } from '../components/sections/StatsRow';
-import { FeatureCard } from '../components/sections/FeatureCard';
 import { Button } from '../components/ui/Button';
+import { useCarousel } from '../hooks/useCarousel';
 
 export function ImpactPage() {
+  const carousel = useCarousel(interns, 4);
+
   return (
     <>
+      {/* Top Banner Image */}
+      <PageHeroBanner image={assets.programHero} />
+
+      {/* Hero Section */}
       <HeroSection
-        eyebrow="Art Gallery"
-        title="Creativity, Connection, Possibility"
-        description="EchoBloom creates programs and technology that help people express themselves in ways traditional systems often overlook. Through art, accessible experiences, and human-centered AI, we are exploring what technology can become when it begins with dignity."
+        title="Build something that Matters"
+        description="Join EchoBloom and work at the intersection of AI, design, research, accessibility, and human expression. Our interns contribute to real projects supporting neurodivergent individuals, non-verbal communities, and people with intellectual and developmental disabilities."
       >
-        <div className="flex flex-col gap-3 sm:flex-row">
-          <Link to="/artworks">
-            <Button className="w-full sm:w-auto">Explore Artworks</Button>
-          </Link>
-          <Link to="/programs">
+        <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
+          <a href="#apply">
+            <Button className="w-full sm:w-auto">Open Positions</Button>
+          </a>
+          <a href="#interns">
             <Button variant="secondary" className="w-full sm:w-auto">
-              View Programs
+              Meet our Interns &nbsp;▸
             </Button>
-          </Link>
+          </a>
         </div>
       </HeroSection>
 
-      <section className="container-page pb-8">
-        <img src={assets.impactHero} alt="" className="h-[240px] w-full rounded-s object-cover md:h-[440px]" />
-      </section>
+      {/* More than an Internship Split Section */}
+      <section className="py-16 md:py-24">
+        <div className="container-page grid items-start gap-12 lg:grid-cols-2 lg:gap-20">
+          <div className="flex flex-col gap-4">
+            <h2 className="font-heading text-3xl font-bold tracking-tight text-content-primary md:text-[40px] md:leading-[52px]">
+              More than an Internship
+            </h2>
+            <p className="text-base leading-relaxed text-content-tertiary">
+              At EchoBloom, interns don't just observe. They contribute to to products, programs,
+              research, community initiatives, and experiences that are actively being developed and
+              used.
+            </p>
+          </div>
 
-      <StatsRow stats={impactStats} />
-
-      <section className="container-page py-16 text-center">
-        <h2 className="font-heading text-3xl font-bold md:text-[40px]">
-          Every piece begins with someone’s Expression
-        </h2>
-        <p className="mx-auto mt-4 max-w-2xl text-content-tertiary">
-          The artwork created through EchoBloom programs is more than an outcome of a session. It
-          represents an idea, a moment, a choice of color, a feeling, or a way of communicating that
-          belongs to the person who created it.
-        </p>
-        <div className="mt-8">
-          <Link to="/artworks">
-            <Button>View the Collection</Button>
-          </Link>
+          <div className="flex flex-col divide-y divide-border-default/60">
+            {impactHighlights.map((item) => (
+              <div key={item.title} className="py-5 first:pt-0 last:pb-0">
+                <h3 className="font-heading text-base font-bold text-content-primary md:text-lg">
+                  {item.title}
+                </h3>
+                <p className="mt-1.5 text-sm leading-relaxed text-content-tertiary">
+                  {item.description}
+                </p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
-      <section className="container-page pb-16">
-        <img src={assets.homeHero} alt="" className="h-[280px] w-full rounded-s object-cover md:h-[577px]" />
-      </section>
-
-      <section className="container-page py-12 text-center">
-        <h2 className="font-heading text-3xl font-bold md:text-[40px]">
-          The Impact we want to create is still ahead of Us
-        </h2>
-        <p className="mx-auto mt-4 max-w-2xl text-content-tertiary">
-          EchoBloom is still growing. Our ambition is not simply to reach more people, but to keep
-          learning how technology can better respect the people it is meant to serve.
-        </p>
-      </section>
-
-      <section className="container-page grid gap-4 pb-16 md:grid-cols-3">
-        {impactFeatures.map((feature) => (
-          <FeatureCard key={feature.title} {...feature} />
-        ))}
-      </section>
-
-      <SplitSection
-        title="Impact doesn’t happen Alone"
-        description="Whether you're a student, educator, researcher, community organization, volunteer, or potential partner, there are many ways to contribute to what EchoBloom is building."
-        media={
-          <img src={assets.homeIntern} alt="" className="w-full rounded-s object-cover" />
-        }
-      >
-        <div className="flex flex-col gap-3 sm:flex-row">
-          <Link to="/contact">
-            <Button>Connect</Button>
-          </Link>
-          <Link to="/intern">
-            <Button variant="secondary">Join Us</Button>
-          </Link>
+      {/* Find your Place at EchoBloom Form Section */}
+      <section id="apply" className="container-page py-16 md:py-24">
+        <div className="mb-10 text-center">
+          <p className="text-xs font-medium uppercase tracking-widest text-content-tertiary">
+            Join us
+          </p>
+          <h2 className="mt-2 font-heading text-4xl font-bold leading-tight text-content-primary md:text-6xl md:leading-[1.15]">
+            Find your Place
+            <br />
+            at EchoBloom
+          </h2>
         </div>
-      </SplitSection>
+        <ImpactApplicationForm />
+      </section>
+
+      {/* Meet our Amazing Interns Section */}
+      <div id="interns">
+        <Carousel
+          title="Meet our Amazing Interns"
+          items={carousel.visibleItems}
+          renderItem={(intern) => (
+            <Link
+              key={intern.slug}
+              to={`/intern/${intern.slug}`}
+              className="flex h-[380px] flex-col justify-end rounded-s bg-[#d9d9d9] p-4 transition-transform hover:scale-[1.01] md:h-[480px]"
+            >
+              <div className="sr-only">
+                <p className="font-semibold text-content-primary">{intern.name}</p>
+                <p className="text-sm text-content-tertiary">{intern.role}</p>
+              </div>
+            </Link>
+          )}
+          onPrev={carousel.prev}
+          onNext={carousel.next}
+          hasMultiple={carousel.hasMultiple}
+        />
+      </div>
     </>
   );
 }

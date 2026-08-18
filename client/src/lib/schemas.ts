@@ -27,3 +27,18 @@ export const internApplicationSchema = z.object({
 });
 
 export type InternApplicationFormData = z.infer<typeof internApplicationSchema>;
+
+export const impactApplicationSchema = z.object({
+  firstName: z.string().min(1, 'First name is required'),
+  lastName: z.string().min(1, 'Last name is required'),
+  email: z.string().email('Enter a valid email'),
+  phone: z.string().optional(),
+  organization: z.string().optional(),
+  academicStatus: z.string().optional(),
+  programPosition: z.string().optional(),
+  linkedinUrl: z.string().url('Enter a valid URL').optional().or(z.literal('')),
+  portfolioUrl: z.string().url('Enter a valid URL').optional().or(z.literal('')),
+  website: z.string().max(0).optional(),
+});
+
+export type ImpactApplicationFormData = z.infer<typeof impactApplicationSchema>;

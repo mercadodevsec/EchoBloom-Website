@@ -22,7 +22,7 @@ export function HeroSection({
     <section className={cn('py-16 md:py-24', className)}>
       <div
         className={cn(
-          'container-page flex flex-col gap-6',
+          'container-page flex flex-col items-center gap-6',
           align === 'center' ? 'items-center text-center' : 'items-start text-left',
         )}
       >
@@ -33,7 +33,7 @@ export function HeroSection({
           {title}
         </h1>
         {description ? (
-          <p className="max-w-2xl text-base text-content-tertiary md:text-lg">{description}</p>
+          <p className="text-base text-content-tertiary md:text-base">{description}</p>
         ) : null}
         {children}
       </div>
