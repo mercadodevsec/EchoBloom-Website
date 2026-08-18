@@ -81,6 +81,7 @@ export function ImpactPage() {
       <div id="interns">
         <Carousel
           title="Meet our Amazing Interns"
+          subtitle="Product Design Intern"
           items={carousel.visibleItems}
           renderItem={(intern) => (
             <Link
@@ -88,7 +89,7 @@ export function ImpactPage() {
               to={`/intern/${intern.slug}`}
               className="flex h-[380px] flex-col justify-end rounded-s bg-[#d9d9d9] p-4 transition-transform hover:scale-[1.01] md:h-[480px]"
             >
-              <div className="sr-only">
+              <div>
                 <p className="font-semibold text-content-primary">{intern.name}</p>
                 <p className="text-sm text-content-tertiary">{intern.role}</p>
               </div>

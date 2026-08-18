@@ -3,6 +3,7 @@ import { cn } from '../../lib/utils';
 
 export type HeroSectionProps = {
   eyebrow?: string;
+  eyebrowClassName?: string;
   title: string;
   description?: string;
   align?: 'center' | 'left';
@@ -12,6 +13,7 @@ export type HeroSectionProps = {
 
 export function HeroSection({
   eyebrow,
+  eyebrowClassName,
   title,
   description,
   align = 'center',
@@ -27,7 +29,7 @@ export function HeroSection({
         )}
       >
         {eyebrow ? (
-          <p className="text-sm text-content-tertiary">{eyebrow}</p>
+          <p className={cn('text-sm text-content-tertiary', eyebrowClassName)}>{eyebrow}</p>
         ) : null}
         <h1 className="max-w-4xl font-heading text-4xl font-bold leading-tight tracking-tight text-content-primary md:text-6xl md:leading-[76px]">
           {title}

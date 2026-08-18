@@ -4,6 +4,7 @@ import { Icon } from '../ui/AccordionRow';
 
 export type CarouselProps<T> = {
   title?: string;
+  subtitle?: string;
   items: T[];
   renderItem: (item: T, index: number) => ReactNode;
   onPrev: () => void;
@@ -13,6 +14,7 @@ export type CarouselProps<T> = {
 
 export function Carousel<T>({
   title,
+  subtitle,
   items,
   renderItem,
   onPrev,
@@ -23,19 +25,25 @@ export function Carousel<T>({
     <section aria-roledescription="carousel" className="py-8">
       <div className="container-page">
         {title ? (
-          <div className="mb-8 flex items-center justify-between gap-4">
-            <h2 className="font-heading text-3xl font-bold text-content-primary md:text-[40px]">
-              {title}
-            </h2>
-            {hasMultiple ? (
-              <div className="flex gap-3">
-                <ButtonIcon label="Previous slide" onClick={onPrev}>
-                  <Icon name="ri-arrow-left-s-line" size={16} />
-                </ButtonIcon>
-                <ButtonIcon label="Next slide" onClick={onNext}>
-                  <Icon name="ri-arrow-right-s-line" size={16} />
-                </ButtonIcon>
-              </div>
+          <div className="mb-8">
+            <div className="flex items-center justify-between gap-4">
+              <h2 className="font-heading text-3xl font-bold text-content-primary md:text-[40px]">
+                {title}
+              </h2>
+              {hasMultiple ? (
+                <div className="flex gap-3">
+                  <ButtonIcon label="Previous slide" onClick={onPrev}>
+                    <Icon name="ri-arrow-left-s-line" size={16} />
+                  </ButtonIcon>
+                  <ButtonIcon label="Next slide" onClick={onNext}>
+                    <Icon name="ri-arrow-right-s-line" size={16} />
+                  </ButtonIcon>
+                </div>
+              ) : null}
+            </div>
+            <div className="mt-4 border-b border-border-default/60" />
+            {subtitle ? (
+              <p className="mt-4 text-sm text-content-brand-eb">{subtitle}</p>
             ) : null}
           </div>
         ) : null}

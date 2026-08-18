@@ -24,8 +24,8 @@ export const ipmdProducts = [
 ];
 
 export const teamMembers = [
-  { id: '1', name: 'Team Member 1' },
-  { id: '2', name: 'Team Member 2' },
-  { id: '3', name: 'Team Member 3' },
-  { id: '4', name: 'Team Member 4' },
+  { id: '1', name: 'Min Lee', role: 'Founder & CEO' },
+  { id: '2', name: 'Angela Bae', role: 'Clinical CEO' },
+  { id: '3', name: 'Rimma Ten', role: 'COO' },
+  { id: '4', name: 'Chengyang Ni', role: 'CTO' },
 ];

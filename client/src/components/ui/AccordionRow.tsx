@@ -18,7 +18,7 @@ export function AccordionRow({ title, description, className }: AccordionRowProp
 
 export type IconProps = {
   name: string;
-  size?: 16 | 24 | 32;
+  size?: 16 | 20 | 24 | 32 | 48;
   className?: string;
 };
 

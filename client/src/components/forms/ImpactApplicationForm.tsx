@@ -74,9 +74,9 @@ export function ImpactApplicationForm() {
         {/* Row 2: Email + Phone */}
         <div className="grid gap-6 md:grid-cols-2">
           <Input
-            label="Email"
+            label="E-mail"
             type="email"
-            placeholder="Enter Last Name"
+            placeholder="Enter e-mail"
             error={errors.email?.message}
             {...register('email')}
           />
@@ -99,7 +99,7 @@ export function ImpactApplicationForm() {
           />
           <Select
             label="Current Academic Status"
-            placeholder="Choose academic status"
+            placeholder="Choose an option"
             options={academicStatusOptions}
             error={errors.academicStatus?.message}
             {...register('academicStatus')}

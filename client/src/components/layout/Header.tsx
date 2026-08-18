@@ -12,7 +12,7 @@ export function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-border-default/60 bg-background-disabled/95 backdrop-blur">
+    <header className="sticky top-0 z-50 bg-background-primary/95 backdrop-blur">
       <a
         href="#main-content"
         className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:rounded-xs focus:bg-background-brand-eb focus:px-4 focus:py-2 focus:text-content-on-brand"
@@ -24,7 +24,7 @@ export function Header() {
           <img src={assets.logo} alt="EchoBloom" className="size-11" />
         </Link>
 
-        <nav className="hidden items-center gap-8 lg:flex" aria-label="Primary">
+        <nav className="hidden items-center gap-10 lg:flex" aria-label="Primary">
           {navItems.map((item) => (
             <NavLink
               key={item.href}
@@ -33,7 +33,7 @@ export function Header() {
                 'text-base transition-colors',
                 activeRoute === item.route
                   ? 'font-semibold text-content-brand-eb'
-                  : 'text-content-tertiary hover:text-content-primary',
+                  : 'text-content-secondary hover:text-content-primary',
               )}
             >
               {item.label}
