@@ -1,7 +1,7 @@
 import { clsx, type ClassValue } from './clsx';
 
 export function cn(...inputs: ClassValue[]) {
-  return clsx(inputs);
+  return clsx(...inputs);
 }
 
 export type ButtonVariant = 'primary' | 'secondary' | 'tertiary' | 'tertiary-mono';
@@ -19,7 +19,7 @@ const variantClasses: Record<ButtonVariant, string> = {
 };
 
 const sizeClasses: Record<ButtonSize, string> = {
-  lg: 'h-12 min-w-[200px] px-6 text-base',
+  lg: 'h-14 min-w-[200px] px-6 text-base',
   sm: 'h-[38px] min-w-[76px] px-3 text-sm',
 };
 

@@ -31,11 +31,13 @@ export function HeroSection({
         {eyebrow ? (
           <p className={cn('text-sm text-content-tertiary', eyebrowClassName)}>{eyebrow}</p>
         ) : null}
-        <h1 className="max-w-4xl font-heading text-4xl font-bold leading-tight tracking-tight text-content-primary md:text-6xl md:leading-[76px]">
+        <h1 className="max-w-[632px] font-heading text-4xl font-bold leading-tight tracking-tight text-content-primary md:text-6xl md:leading-[76px]">
           {title}
         </h1>
         {description ? (
-          <p className="text-base text-content-tertiary md:text-base">{description}</p>
+          <p className="max-w-[632px] text-base font-semibold leading-[30px] text-content-tertiary md:text-lg">
+            {description}
+          </p>
         ) : null}
         {children}
       </div>
